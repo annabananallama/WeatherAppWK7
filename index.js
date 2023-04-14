@@ -53,6 +53,7 @@ function getWeatherData(city) {
 function showTemperature(response) {
   let city = response.data.name;
   let windSpeed = Math.round(response.data.wind.speed);
+  let description = response.data.weather[0].description;
   currentTempCelsius = Math.round(response.data.main.temp);
   currentTempFahrenheit = Math.round((currentTempCelsius * 9) / 5 + 32);
 
@@ -61,11 +62,15 @@ function showTemperature(response) {
 
   const windSpeedElement = document.querySelector(".speed");
   windSpeedElement.innerHTML = `${windSpeed} m/s`;
+
+  const descriptionElement = document.querySelector(".description");
+  descriptionElement.innerHTML = `${description}`;
 }
 
 function displayWeatherData(response) {
   let city = response.data.name;
   let windSpeed = Math.round(response.data.wind.speed);
+  let description = response.data.weather[0].description;
   currentTempCelsius = Math.round(response.data.main.temp);
   currentTempFahrenheit = Math.round((currentTempCelsius * 9) / 5 + 32);
 
@@ -74,6 +79,9 @@ function displayWeatherData(response) {
 
   const windSpeedElement = document.querySelector(".speed");
   windSpeedElement.innerHTML = `${windSpeed} m/s`;
+
+  const descriptionElement = document.querySelector(".description");
+  descriptionElement.innerHTML = `${description}`;
 }
 
 function toggleTemperature() {
