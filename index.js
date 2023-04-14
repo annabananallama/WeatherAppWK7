@@ -52,20 +52,28 @@ function getWeatherData(city) {
 
 function showTemperature(response) {
   let city = response.data.name;
+  let windSpeed = Math.round(response.data.wind.speed);
   currentTempCelsius = Math.round(response.data.main.temp);
   currentTempFahrenheit = Math.round((currentTempCelsius * 9) / 5 + 32);
 
   cityNameElement.innerHTML = `${city}`;
   temperatureElement.innerHTML = `<strong>Temperature:</strong></br> ${currentTempCelsius}°C`;
+
+  const windSpeedElement = document.querySelector(".speed");
+  windSpeedElement.innerHTML = `${windSpeed} m/s`;
 }
 
 function displayWeatherData(response) {
   let city = response.data.name;
+  let windSpeed = Math.round(response.data.wind.speed);
   currentTempCelsius = Math.round(response.data.main.temp);
   currentTempFahrenheit = Math.round((currentTempCelsius * 9) / 5 + 32);
 
   cityNameElement.innerHTML = city;
   temperatureElement.innerHTML = `<strong>Temperature:</strong></br> ${currentTempCelsius}°C`;
+
+  const windSpeedElement = document.querySelector(".speed");
+  windSpeedElement.innerHTML = `${windSpeed} m/s`;
 }
 
 function toggleTemperature() {
