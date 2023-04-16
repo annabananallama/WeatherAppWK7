@@ -33,12 +33,10 @@ h3 {
 }
 
 h4 {
-  margin-top: 10px;
   font-size: 20px;
 }
 
 h5 {
-  margin-top: 15px;
   font-size: 18px;
 }
 
@@ -59,7 +57,7 @@ h5:hover {
   height: 200px;
   padding-top: 70px;
   font-size: 20px;
-  margin: 10px 45px 35px 45px;
+  margin: 0px 45px 35px 45px;
   width: 200px;
 }
 
